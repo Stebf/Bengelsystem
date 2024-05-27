@@ -47,7 +47,7 @@ if (isset($_POST['change'])) {
     $HelferNewPasswort  = $_POST['helfer-newpasswort'];
     if (empty($messages)) {
         // Helferdaten Ändern
-        HelferdatenAendern($db_link, $HelferName, $HelferEmail, $HelferHandy, $HelferNewPasswort, $HelferID);
+        HelferdatenAendern($db_link, $HelferName, $HelferEmail, $HelferHandy, $HelferNewPasswort, $HelferID, $HelferLevel);
     } else {
         // Fehlermeldungen ausgeben:
         echo '<div class="error"><ul>';
@@ -71,6 +71,7 @@ while ($zeile = mysqli_fetch_array($db_erg, MYSQLI_ASSOC)) {
     $HelferName = $zeile['Name'];
     $HelferEmail = $zeile['Email'];
     $HelferHandy = $zeile['Handy'];
+    $HelferLevel = $zeile['Level'];
 }
 
 /// Logout
